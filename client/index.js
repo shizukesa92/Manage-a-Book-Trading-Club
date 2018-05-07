@@ -4,7 +4,11 @@ import {
 	Provider
 } from 'react-redux';
 import reduxThunk from 'redux-thunk';
-
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import {
+	setCurrentUser
+} from './actions/userActions'
+import axios from 'axios'
 import App from './App';
 import {
 	store
@@ -13,10 +17,27 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 injectTapEventPlugin()
 
+if (localStorage.token) {
+	const token = localStorage.token
+	axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
+	store.dispatch(setCurrentUser(token))
+} else {
+	delete axios.defaults.headers.common['Authorization'];
+}
 
+const muiTheme = getMuiTheme({
+	tabs: {
+		backgroundColor: 'white',
+		textColor: 'black',
+		selectedTextColor: 'black'
+	}
+})
 
 ReactDOM.render(
-	<MuiThemeProvider>
-	<Provider store={store}>
-    	<App />
-	</Provider></MuiThemeProvider>, document.getElementById("root"));
+	<MuiThemeProvider muiTheme={muiTheme} >
+    <Provider store={store}>
+        <App />
+    </Provider>
+</MuiThemeProvider>,
+	document.getElementById("root")
+)

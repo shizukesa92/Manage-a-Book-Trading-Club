@@ -8,12 +8,15 @@ import {
 import Routes from "./routes";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-
+import {
+	connect
+} from 'react-redux'
 
 require("./main.scss");
 require("./components/Components.scss");
+require("./modules/App/App.scss")
 
-export default class App extends Component {
+class App extends Component {
 
 	render() {
 		return (
@@ -29,3 +32,16 @@ export default class App extends Component {
 		);
 	}
 }
+
+const mapStateToProps = (state) => {
+	return {
+		isAuthenticated: state.user.isAuthenticated
+	}
+}
+const mapDispatchToProps = (dispatch) => {
+	return {
+
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

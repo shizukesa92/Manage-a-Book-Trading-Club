@@ -1,9 +1,10 @@
 import {
 	combineReducers
 } from 'redux'
-
-import chart from './modules/Chart/ChartReducer'
+import user from './modules/User/UserReducer'
+import book from './modules/Book/BookReducer'
 
 export default combineReducers({
-	chart
+	user,
+	book
 })

@@ -10,7 +10,6 @@ import Home from './modules/App/App';
 
 import Signup from './containers/Signup'
 import Login from './containers/Login'
-import About from './containers/About'
 import Allbooks from './containers/Allbooks'
 import Mybooks from './containers/Mybooks'
 import Settings from './containers/Settings'
@@ -38,7 +37,6 @@ class Routes extends React.Component {
                             <Login/>
                         )
                         )}/>
-                    <Route exact path='/about' component={About}/>
                     <Route exact path='/allbooks' render={() => (
 
                         this.props.isAuthenticated ? (

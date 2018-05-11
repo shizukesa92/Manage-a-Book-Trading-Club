@@ -8,11 +8,11 @@ import {
 } from 'react-redux'
 import Home from './modules/App/App';
 
-import Signup from './containers/Signup'
-import Login from './containers/Login'
-import Allbooks from './containers/Allbooks'
-import Mybooks from './containers/Mybooks'
-import Settings from './containers/Settings'
+import Signup from './modules/User/Signup'
+import Login from './modules/User/Login'
+import Allbooks from './modules/Book/Allbooks'
+import Mybooks from './modules/Book/Mybooks'
+import Settings from './modules/User/Settings'
 
 class Routes extends React.Component {
 

@@ -4,38 +4,76 @@ import React, {
 import {
 	connect
 } from 'react-redux'
-import Paper from 'material-ui/Paper'
-import Star from 'material-ui/svg-icons/toggle/star';
+import {
+	List,
+	ListItem
+} from 'material-ui/List';
 
-import {} from '../User/UserActions'
+
+import {
+	allbooks,
+	trade
+} from '../Book/BookActions'
+import AllCard from '../components/AllCard'
+import {
+	info
+} from '../User/UserActions'
+
 class Home extends Component {
 	constructor() {
 		super()
-
+		this.trade = this.trade.bind(this)
 	}
 
+	componentWillMount() {
+		this.props.allbooks()
+		this.props.info()
+	}
 	render() {
-
+		const books = this.props.books.map((book) => {
+			return <AllCard trade_requests={this.props.trade_requests} trade={this.trade} key={book._id} book ={book}/>
+		})
 		return (
 			<div>
-				<h1>Welcome to the book trading App!</h1>
+                 <List>
+                    <div className='row'>
+                    {books}
+                    </div>
+                </List>
             </div>
 		)
 	}
 
 
-
+	trade(bookid, owner) {
+		const info = {
+			book: bookid,
+			for: owner,
+			pending: true
+		}
+		this.props.trade(info)
+	}
 
 }
 
 const mapStateToProps = (state) => {
 	return {
+		books: state.book.allbooks,
+		trade_requests: state.user.trade_requests
 
 	}
 }
 const mapDispatchToProps = (dispatch) => {
 	return {
-
+		allbooks: () => {
+			dispatch(allbooks())
+		},
+		trade: (book) => {
+			dispatch(trade(book))
+		},
+		info: () => {
+			dispatch(info())
+		}
 	}
 }
 

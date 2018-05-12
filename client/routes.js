@@ -11,7 +11,6 @@ import Home from './modules/App/App';
 import Signup from './modules/User/Signup'
 import Login from './modules/User/Login'
 import Mybooks from './modules/Book/Mybooks'
-import Settings from './modules/User/Settings'
 
 class Routes extends React.Component {
 
@@ -41,15 +40,6 @@ class Routes extends React.Component {
 
                         this.props.isAuthenticated ? (
                             <Mybooks />
-                        ) : (
-                            <Redirect to="/"/>
-                            
-                        )
-                        )}/>
-                    <Route exact path='/settings' render={() => (
-
-                        this.props.isAuthenticated ? (
-                            <Settings />
                         ) : (
                             <Redirect to="/"/>
                             

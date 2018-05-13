@@ -15,8 +15,7 @@
 		.get(userController.authenticate, booksController.mybooks)
 	router.route('/accept')
 		.post(userController.authenticate, booksController.accept)
-	//test
-	router.route('/allbooks')
+	router.route('/')
 		.get(userController.authenticate, booksController.allBooks)
 	router.route('/books')
 		.delete(booksController.deleteBooks)

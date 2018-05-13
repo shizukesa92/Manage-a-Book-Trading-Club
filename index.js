@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 const booksRoutes = require('./server/routes/book.routes')
-const userRoutes = require('./server/routes/user.routes.js')
+const userRoutes = require('./server/routes/user.routes')
 app.use(booksRoutes, userRoutes)
 
 

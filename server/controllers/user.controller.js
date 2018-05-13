@@ -88,27 +88,7 @@ module.exports = {
 		} else {}
 	},
 
-	settings: async (req, res, next) => {
-		const user = await User.findOne({
-			email: req.user.email
-		})
-		user.name = req.body.name
-		user.city = req.body.city
-		user.state = req.body.state
-		await user.save()
 
-		const token = jwt.sign({
-			name: user.name,
-			email: user.email,
-			state: user.state,
-			city: user.city
-		}, 'secret', {
-			expiresIn: '24h'
-		})
-
-		res.send(token)
-
-	},
 	info: async (req, res, next) => {
 
 		const user = await User.findOne({

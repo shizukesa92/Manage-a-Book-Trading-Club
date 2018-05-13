@@ -19,6 +19,8 @@ class Routes extends React.Component {
 
 			<Switch>
                     <Route exact path='/' component={Home}/>
+
+
                     <Route exact path='/signup' render={() => (
 
                         this.props.isAuthenticated ? (
@@ -30,7 +32,7 @@ class Routes extends React.Component {
                         <Route exact path='/login' render={() => (
 
                         this.props.isAuthenticated ? (
-                            <Redirect to="/"/>
+							<Redirect to="/"/>
                         ) : (
                             <Login/>
                         )

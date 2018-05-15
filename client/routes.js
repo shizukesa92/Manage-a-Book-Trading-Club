@@ -8,9 +8,9 @@ import {
 } from 'react-redux'
 import Home from './modules/App/App';
 
-import Signup from './modules/User/Signup'
-import Login from './modules/User/Login'
-import Mybooks from './modules/Book/Mybooks'
+import Signup from './components/Signup.js'
+import Login from './components/Login'
+import Mybooks from './components/Mybooks'
 
 class Routes extends React.Component {
 

@@ -7,7 +7,7 @@ import reduxThunk from 'redux-thunk';
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import {
 	setCurrentUser
-} from './actions/userActions'
+} from './modules/User/UserActions'
 import axios from 'axios'
 import App from './App';
 import {

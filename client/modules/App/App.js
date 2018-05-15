@@ -14,7 +14,7 @@ import {
 	allbooks,
 	trade
 } from '../Book/BookActions'
-import AllCard from '../components/AllCard'
+import AllCard from '../Book/AllCard'
 import {
 	info
 } from '../User/UserActions'

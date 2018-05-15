@@ -1,27 +1,35 @@
-import React, {Component} from 'react'
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import React, {
+	Component
+} from 'react'
+import {
+	Card,
+	CardActions,
+	CardHeader,
+	CardMedia,
+	CardTitle,
+	CardText
+} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton'
 import Dialog from 'material-ui/Dialog';
-import cover from '../assets/noimage.png'
 
 
-export default class RequestsForYouCard extends Component{
-    constructor(){
-        super()
-        this.state={
-            open:false
-        }
-        this.handleClose=this.handleClose.bind(this)
-        this.handleOpen=this.handleOpen.bind(this)
-    }
-    render(){
-        const info = this.props.info
-        const style ={
-            paddingTop:'10px'
-        }
-        return(
-          
-            <div  className='col s4'>
+export default class RequestsForYouCard extends Component {
+	constructor() {
+		super()
+		this.state = {
+			open: false
+		}
+		this.handleClose = this.handleClose.bind(this)
+		this.handleOpen = this.handleOpen.bind(this)
+	}
+	render() {
+		const info = this.props.info
+		const style = {
+			paddingTop: '10px'
+		}
+		return (
+
+			<div  className='col s4'>
                 <Card>
                     <CardMedia>
                         <img src ={info.book.image} height="200"  />
@@ -46,14 +54,18 @@ export default class RequestsForYouCard extends Component{
                     </Dialog>
                 </Card>
         </div>
-         
-        )
-    }
-    handleOpen(){
-        this.setState({open: true});
-      };
-    
-      handleClose() {
-        this.setState({open: false});
-      };
+
+		)
+	}
+	handleOpen() {
+		this.setState({
+			open: true
+		});
+	};
+
+	handleClose() {
+		this.setState({
+			open: false
+		});
+	};
 }

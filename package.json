@@ -1,10 +1,10 @@
 {
-  "name": "Manage-a-Book-Trading-Club",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/shizukesa92/Manage-a-Book-Trading-Club.git",
-  "author": "Leonard Tye <leonardtye1992@gmail.com>",
-  "license": "MIT",
+	"name": "Manage-a-Book-Trading-Club",
+	"version": "1.0.0",
+	"main": "index.js",
+	"repository": "https://github.com/shizukesa92/Manage-a-Book-Trading-Club.git",
+	"author": "Leonard Tye <leonardtye1992@gmail.com>",
+	"license": "MIT",
 	"engines": {
 		"node": "10.0.0",
 		"npm": "5.8.0",
@@ -34,7 +34,10 @@
 		"express-session": "^1.15.6",
 		"jquery": "^3.3.1",
 		"jsonwebtoken": "^8.2.1",
+		"jwt-decode": "^2.2.0",
 		"lodash": "^4.17.10",
+		"material-ui": "^0.20.1",
+		"material-ui-scrollable-tabs": "^2.0.0",
 		"moment": "^2.22.1",
 		"mongodb": "^3.0.5",
 		"mongoose": "^5.0.13",
@@ -46,9 +49,12 @@
 		"react-redux": "^5.0.7",
 		"react-router": "^4.2.0",
 		"react-router-dom": "^4.2.2",
+		"react-tap-event-plugin": "^3.0.2",
 		"redux": "^3.7.2",
 		"redux-batched-actions": "^0.2.1",
-		"redux-thunk": "^2.2.0"
+		"redux-logger": "^3.0.6",
+		"redux-thunk": "^2.2.0",
+		"validator": "^10.2.0"
 	},
 	"devDependencies": {
 		"autoprefixer": "^8.2.0",

@@ -1,8 +1,16 @@
-import React, { Component } from 'react'
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import React, {
+	Component
+} from 'react'
+import {
+	Card,
+	CardActions,
+	CardHeader,
+	CardMedia,
+	CardTitle,
+	CardText
+} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton'
 import Dialog from 'material-ui/Dialog';
-import cover from '../assets/noimage.png'
 
 
 export default class Book extends Component{

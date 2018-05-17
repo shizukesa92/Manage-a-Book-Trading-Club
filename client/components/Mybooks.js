@@ -16,7 +16,7 @@ import {
 	addBook,
 	deleteBook,
 	accept
-} from '../actions/booksActions'
+} from '../modules/Book/BookActions'
 import {
 	Tabs,
 	Tab
@@ -25,14 +25,14 @@ import Slider from 'material-ui/Slider';
 import {
 	info,
 	deleteRequest
-} from '../actions/userActions'
+} from '../modules/User/UserActions'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
-import Card from '../components/card'
-import Books from '../components/Books'
-import MyRequests from '../components/MyRequests'
-import RequestsForYou from '../components/RequestsForYou'
+import Card from '../modules/Book/Card'
+import Books from '../modules/Book/Books'
+import MyRequests from '../modules/User/MyRequests'
+import RequestsForYou from '../modules/User/RequestsForYou'
 
 class Mybooks extends Component {
 	constructor() {

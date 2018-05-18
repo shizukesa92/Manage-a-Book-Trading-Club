@@ -68,7 +68,7 @@ class Signup extends Component {
                         errorText={this.state.errors.password}
                         /><br />
 
-                        <TextField hintText="repeed password"
+                        <TextField hintText="repeat password"
                         name='repeatedPassword'
                         type='password'
                         onChange={(e)=>{this.handleChange(e)}}
@@ -112,11 +112,11 @@ class Signup extends Component {
 	valid() {
 		const errors = {}
 		if (Validator.isEmpty(this.state.name)) {
-			errors.name = 'This field is requierd'
+			errors.name = 'This field is required'
 		}
 
 		if (Validator.isEmpty(this.state.email)) {
-			errors.email = 'This field is requierd'
+			errors.email = 'This field is required'
 		} else if (!Validator.isEmail(this.state.email)) {
 			errors.email = 'Email is invalid'
 		}

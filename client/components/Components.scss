@@ -8,10 +8,15 @@
 	background-color: #E27222;
 	color: #DDC990;
 	justify-content: center;
-
 	font-size: 2vw;
 }
-
+#header > div{
+	min-width: 100vw;
+	height: 10vh;
+	display: flex;
+	background-color: #E27222 !important;
+	color: #DDC990;
+}
 #footer {
 	bottom: 0;
 	position: absolute;

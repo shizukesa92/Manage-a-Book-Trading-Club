@@ -12,12 +12,14 @@ import Signup from './components/Signup.js'
 import Login from './components/Login'
 import Mybooks from './components/Mybooks'
 
-class Routes extends React.Component {
+export default class Routes extends React.Component {
 
 	render() {
 		return (
 
 			<Switch>
+
+
                     <Route exact path='/' component={Home}/>
 
 
@@ -52,5 +54,3 @@ class Routes extends React.Component {
 
 	}
 }
-
-export default connect(mapStateToProps, mapDispatchToProps)(Routes)

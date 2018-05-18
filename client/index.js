@@ -14,8 +14,7 @@ import {
 	store
 } from './store'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import injectTapEventPlugin from 'react-tap-event-plugin'
-injectTapEventPlugin()
+
 
 if (localStorage.token) {
 	const token = localStorage.token

@@ -39,9 +39,8 @@ class Signup extends Component {
 		}
 
 		return (
-			<div>
-                
-                <div style={style.align}>
+
+			<div style={style.align}>
                     <h1>Sign up</h1>
 
                     <form onSubmit={(e)=>{this.submit(e)}}>
@@ -79,7 +78,6 @@ class Signup extends Component {
                         <RaisedButton type='submit' backgroundColor='#B71C1C' labelColor='#e5e5e5' icon={<Send />} label='send'/>
                     </form>
                 </div>
-            </div>
 		)
 	}
 	handleChange(e) {

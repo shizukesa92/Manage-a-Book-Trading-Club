@@ -26,8 +26,7 @@ import {
 	info,
 	deleteRequest
 } from '../modules/User/UserActions'
-import injectTapEventPlugin from 'react-tap-event-plugin';
-injectTapEventPlugin();
+
 
 import Card from '../modules/Book/Card'
 import Books from '../modules/Book/Books'

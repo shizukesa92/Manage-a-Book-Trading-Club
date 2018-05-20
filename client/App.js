@@ -3,15 +3,20 @@ import React, {
 } from "react";
 import ReactDOM from "react-dom";
 import {
-	BrowserRouter
+	BrowserRouter,
+	Route,
+	Switch,
+	Redirect
 } from "react-router-dom";
-import Routes from "./routes";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import {
 	connect
 } from 'react-redux'
-
+import Home from './modules/App/App';
+import Signup from './components/Signup'
+import Login from './components/Login'
+import Mybooks from './components/Mybooks'
 require("./main.scss");
 require("./components/Components.scss");
 require("./modules/App/App.scss")
@@ -24,7 +29,45 @@ class App extends Component {
 			<div id = "wrapper">
             <Header />
 			<div id ="content">
-				<Routes />
+<Switch>
+                    <Route exact path='/' component={Home}/>
+                    <Route exact path='/signup' render={() => (
+
+                        this.props.isAuthenticated ? (
+                            <Redirect to="/"/>
+                        ) : (
+                            <Signup/>
+                        )
+                        )}/>
+                        <Route exact path='/login' render={() => (
+
+                        this.props.isAuthenticated ? (
+                            <Redirect to="/"/>
+                        ) : (
+                            <Login/>
+                        )
+                        )}/>
+                    <Route exact path='/allbooks' render={() => (
+
+                        this.props.isAuthenticated ? (
+                            <Allbooks />
+                        ) : (
+                            <Redirect to="/"/>
+                            
+                        )
+                        )}/>
+
+                        )}/>
+                    <Route exact path='/mybooks' render={() => (
+
+                        this.props.isAuthenticated ? (
+                            <Mybooks />
+                        ) : (
+                            <Redirect to="/"/>
+                            
+                        )
+					)}/>                    
+			</Switch>
 			</div>
 	<Footer />
 </div>

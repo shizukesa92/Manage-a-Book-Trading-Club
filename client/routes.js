@@ -1,14 +1,15 @@
 import React from "react";
 import {
 	Route,
-	Switch
+	Switch,
+	Redirect
 } from "react-router-dom";
 import {
 	connect
 } from 'react-redux'
 import Home from './modules/App/App';
 
-import Signup from './components/Signup.js'
+import Signup from './components/Signup'
 import Login from './components/Login'
 import Mybooks from './components/Mybooks'
 
@@ -40,15 +41,7 @@ export default class Routes extends React.Component {
                         )
                         )}/>
 
-                    <Route exact path='/mybooks' render={() => (
-
-                        this.props.isAuthenticated ? (
-                            <Mybooks />
-                        ) : (
-                            <Redirect to="/"/>
-                            
-                        )
-                        )}/>
+/>
 
                     </Switch>);
 

@@ -62,24 +62,6 @@ export function setCurrentUser(token) {
 	}
 }
 
-export function update(data) {
-	return dispatch => {
-		axios({
-			method: 'put',
-			url: '/settings',
-			data: data
-		}).then((res) => {
-			localStorage.removeItem('token')
-			localStorage.setItem('token', res.data)
-			dispatch({
-				type: 'UPDATE',
-				payload: res.data
-			})
-
-		})
-	}
-}
-
 export function handleChange(profile) {
 	return dispatch => {
 		dispatch({

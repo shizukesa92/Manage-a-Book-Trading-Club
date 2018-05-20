@@ -19,6 +19,5 @@
 		.get(userController.authenticate, booksController.allBooks)
 	router.route('/books')
 		.delete(booksController.deleteBooks)
-	router.route('/')
-		.get(userController.authenticate, booksController.allBooks)
+
 	module.exports = router

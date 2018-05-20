@@ -4,76 +4,64 @@ import React, {
 import {
 	connect
 } from 'react-redux'
-import {
-	List,
-	ListItem
-} from 'material-ui/List';
-
+import Paper from 'material-ui/Paper'
+import Star from 'material-ui/svg-icons/toggle/star';
 
 import {
-	allbooks,
-	trade
-} from '../Book/BookActions'
-import AllCard from '../Book/AllCard'
-import {
-	info
+
 } from '../User/UserActions'
 
 class Home extends Component {
 	constructor() {
 		super()
-		this.trade = this.trade.bind(this)
+
 	}
 
-	componentWillMount() {
-		this.props.allbooks()
-		this.props.info()
-	}
 	render() {
-		const books = this.props.books.map((book) => {
-			return <AllCard trade_requests={this.props.trade_requests} trade={this.trade} key={book._id} book ={book}/>
-		})
+
+		const style = {
+			align: {
+				textAlign: 'center'
+			},
+
+		}
+
 		return (
-			<div>
-                 <List>
-                    <div className='row'>
-                    {books}
+			<div className='Home'>
+
+
+                <div className='row'>
+                    <div className='col s4'>
+                        
+                        <h2><Star color='#ffbf00'/>Catalogue your books online</h2>
+                        <h2><Star color='#ffbf00'/>Manage books and requests from your dashboard</h2>
+                            
                     </div>
-                </List>
+                    <div className='col s4'>
+                    
+                    <h2><Star color='#ffbf00'/>See all books our users own</h2>
+                    <h2><Star color='#ffbf00'/>Request to borrow other users' books</h2>
+                        
+                </div>
+
+                </div>
             </div>
 		)
 	}
 
 
-	trade(bookid, owner) {
-		const info = {
-			book: bookid,
-			for: owner,
-			pending: true
-		}
-		this.props.trade(info)
-	}
+
 
 }
 
 const mapStateToProps = (state) => {
 	return {
-		books: state.book.allbooks,
-		trade_requests: state.user.trade_requests
 
 	}
 }
 const mapDispatchToProps = (dispatch) => {
 	return {
-		allbooks: () => {
-			dispatch(allbooks())
-		},
-		trade: (book) => {
-			dispatch(trade(book))
-		},
-		info: () => {
-			dispatch(info())
-		}
+
 	}
 }
 

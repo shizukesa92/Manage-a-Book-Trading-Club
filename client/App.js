@@ -13,6 +13,7 @@ import Footer from "./components/Footer";
 import {
 	connect
 } from 'react-redux'
+import Routes from "./routes"
 import Home from './modules/App/App';
 import Signup from './components/Signup'
 import Login from './components/Login'
@@ -31,6 +32,7 @@ class App extends Component {
 			<div id ="content">
 <Switch>
                     <Route exact path='/' component={Home}/>
+					<Route exact path='/allbooks' component={Home}/>
                     <Route exact path='/signup' render={() => (
 
                         this.props.isAuthenticated ? (
@@ -47,18 +49,7 @@ class App extends Component {
                             <Login/>
                         )
                         )}/>
-                    <Route exact path='/allbooks' render={() => (
-
-                        this.props.isAuthenticated ? (
-                            <Allbooks />
-                        ) : (
-                            <Redirect to="/"/>
-                            
-                        )
-                        )}/>
-
-                        )}/>
-                    <Route exact path='/mybooks' render={() => (
+                                        <Route exact path='/mybooks' render={() => (
 
                         this.props.isAuthenticated ? (
                             <Mybooks />

@@ -90,32 +90,27 @@ class Mybooks extends Component {
 
                     </div>
                 </Tab>
-                <Tab 		label={<span style={{ color: 'black' }}>my books</span>}> 
+                <Tab 		label={<span style={{ color: 'black' }}>My books</span>}> 
                     <div>
                         <h2>my books</h2>
                         <Books mybooks = {this.mybooks} books={this.props.ownbooks} deleteBook = {this.deleteBook} />
 
                     </div>
                 </Tab>
-                <Tab 		label={<span style={{ color: 'black' }}>your trade requests</span>}> 
+                <Tab 		label={<span style={{ color: 'black' }}>Your trade requests</span>}> 
                     <div>
                         <h2>your trade requests</h2>
                         <MyRequests  info={this.userInfo} user_info = {this.props.trade_requests} deleteRequest={this.deleteRequest} />
                     </div>
                 </Tab>
-                <Tab 		label={<span style={{ color: 'black' }}>trade requests for you</span>}> 
+                <Tab 		label={<span style={{ color: 'black' }}>Trade requests for you</span>}> 
                     <div>
                         <h2>trade requests for you</h2>
                         <RequestsForYou accept={this.accept} user_info = {this.props.requests_for_you}  />
 
                     </div>
                 </Tab>
-                <Tab label={<span style={{ color: 'black' }}>profile</span>}> 
-                    <div>
-                        
 
-                    </div>
-                </Tab>
             </Tabs>
 
 
